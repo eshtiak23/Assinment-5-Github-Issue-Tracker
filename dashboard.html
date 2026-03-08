@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Issues Dashboard</title>
+
+<title>GitHub Issues Tracker</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -12,50 +12,64 @@
 
 <body class="bg-gray-900 text-white">
 
-<!-- Navbar Section -->
-
+             <!-- Navbar Section -->
 <nav class="bg-gray-800 px-6 py-4 flex justify-between items-center">
 
 <div class="flex items-center gap-2">
-<img src="./Images/GitHub-Mark.png" class="w-8">
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" class="w-8">
 <h1 class="font-semibold text-lg">GitHub Issues Tracker</h1>
 </div>
 
 <div class="flex gap-3">
 
-<input id="searchInput" placeholder="Search issues..."class="bg-gray-700 px-3 py-2 rounded text-sm"/>
+<input id="searchInput" placeholder="Search issues..."
+class="bg-gray-700 px-3 py-2 rounded text-sm"/>
 
-<button onclick="searchIssue()" class="bg-purple-600 px-4 py-2 rounded text-sm">Search </button>
+<button onclick="searchIssue()"
+class="bg-purple-600 px-4 py-2 rounded text-sm">
+Search </button>
+
 </div>
-
 </nav>
 
 
 <div class="max-w-7xl mx-auto p-6">
 
 
-<script>
+                <!-- The Tab Section -->
+<div class="bg-gray-800 p-4 rounded-lg flex gap-3 mb-6">
 
-// SEARCH
-async function searchIssue(){
+<button onclick="loadIssues()" class="tabBtn bg-pink-600 px-4 py-1 rounded"> All </button>
 
-const text = document.getElementById("searchInput").value
+<button onclick="loadOpen()" class="tabBtn bg-gray-700 px-4 py-1 rounded">
+Open </button>
 
-showLoading(true)
+<button onclick="loadClosed()" class="tabBtn bg-gray-700 px-4 py-1 rounded"> Closed </button>
 
-const res = await fetch(
-`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`
-)
+</div>
 
-const data = await res.json()
 
-displayIssues(data.data)
+<!-- ISSUE HEADER -->
+<div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center mb-6">
 
-showLoading(false)
+<div>
+<h2 class="text-lg font-semibold">
+<span id="issueCount">0</span> Issues </h2>
+<p class="text-gray-400 text-sm"> Track and manage your project issues </p>
 
-}
+</div>
 
-</script>
+<div class="flex gap-4 text-sm">
+<span class="text-green-400">● Open</span>
+<span class="text-purple-400">● Closed</span>
+</div>
+
+</div>
+
+
+
+<!-- JS FILE -->
+<script src="./script.js"></script>
 
 </body>
 </html>
