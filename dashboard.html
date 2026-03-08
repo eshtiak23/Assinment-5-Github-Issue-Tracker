@@ -31,6 +31,31 @@
 </nav>
 
 
+<div class="max-w-7xl mx-auto p-6">
+
+
+<script>
+
+// SEARCH
+async function searchIssue(){
+
+const text = document.getElementById("searchInput").value
+
+showLoading(true)
+
+const res = await fetch(
+`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`
+)
+
+const data = await res.json()
+
+displayIssues(data.data)
+
+showLoading(false)
+
+}
+
+</script>
 
 </body>
 </html>
