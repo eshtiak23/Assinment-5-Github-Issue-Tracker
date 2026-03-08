@@ -78,9 +78,36 @@ id="issuesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6
 
 </div>
 
+</div>
+
+           <!-- Modal Section Here.. -->
+
+<div
+id="modal"
+class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center"
+>
+
+<div class="bg-gray-800 p-6 rounded-lg max-w-lg w-full">
+
+<h2 id="modalTitle" class="text-xl font-bold mb-2"></h2>
+
+<p id="modalDesc" class="text-gray-300 mb-4"></p>
+
+<div class="text-sm space-y-1">
+
+<p><b>Status:</b> <span id="modalStatus"></span></p>
+<p><b>Author:</b> <span id="modalAuthor"></span></p>
+<p><b>Priority:</b> <span id="modalPriority"></span></p>
+<p><b>Label:</b> <span id="modalLabel"></span></p>
+<p><b>Date:</b> <span id="modalDate"></span></p>
 
 </div>
 
+<button onclick="closeModal()" class="mt-4 bg-Pink-600 px-4 py-2 rounded"> Close </button>
+
+</div>
+
+</div>
 
 
 <!-- JS FILE -->
