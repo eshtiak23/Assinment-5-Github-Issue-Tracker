@@ -5,40 +5,12 @@ const text = document.getElementById("searchInput").value;
 
 showLoading(true);
 
-const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`
-);
+const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`);
 
 const data = await res.json();
 displayIssues(data.data);
 
 showLoading(false);
-
-}
-
-       // All Tabs Section
-
-
-// Open Tab
-
-function loadOpen(){
-
-const filtered = allIssues.filter(
-issue => issue.status === "open"
-);
-
-displayIssues(filtered);
-
-}
-
-
-// Close Tab
-function loadClosed(){
-
-const filtered = allIssues.filter(
-issue => issue.status === "closed"
-);
-
-displayIssues(filtered);
 
 }
 
@@ -107,7 +79,6 @@ displayIssues(filtered);
 
 
 // LOAD ALL ISSUES Section
-
 async function loadIssues(){
 
 showLoading(true);
@@ -125,7 +96,7 @@ showLoading(false);
 
 
 
-               // Dsaplay Issues Section
+               // Display Issues Section
 
 function displayIssues(issues){
 
@@ -148,8 +119,6 @@ card.className =
 `bg-gray-800 p-5 rounded-xl border-t-4 ${borderColor} shadow-md cursor-pointer hover:scale-[1.02] transition`;
 
 card.innerHTML = `
-
-        <!-- Header   -->
 
 <div class="flex justify-between items-center mb-3">
 
@@ -180,21 +149,15 @@ ${issue.priority}
 </div>
 
 
-<!-- TITLE -->
-
 <h3 class="font-semibold text-sm mb-2">
 ${issue.title}
 </h3>
 
 
-<!-- Des. Sec -->
-
 <p class="text-gray-400 text-xs mb-4">
 ${issue.description.substring(0,70)}...
 </p>
 
-
-<!-- Label Section -->
 
 <div class="flex gap-2 mb-4">
 
@@ -209,7 +172,6 @@ ${issue.description.substring(0,70)}...
 </div>
 
 
-<!-- FOOTER -->
 <div class="border-t border-gray-700 pt-3 text-xs text-gray-400">
 
 <p>#${issue.id} by ${issue.author}</p>
@@ -228,7 +190,9 @@ container.appendChild(card);
 
 }
 
-          // Modal Open Section           .....
+
+
+          // Modal Open Section
 
 function openModal(issue){
 
@@ -244,6 +208,7 @@ document.getElementById("modalLabel").innerText = issue.label;
 document.getElementById("modalDate").innerText = issue.createdAt;
 
 }
+
 
 
                // Close Modal Section
