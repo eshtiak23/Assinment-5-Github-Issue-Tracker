@@ -50,7 +50,8 @@ displayIssues(allIssues);
 }
 
 
-// Open Issues
+// Open Issues Sec....
+
 function loadOpen(btn){
 
 changeTab(btn);
@@ -176,7 +177,7 @@ ${issue.description.substring(0,70)}...
 
 <p>#${issue.id} by ${issue.author}</p>
 
-<p>${issue.createdAt}</p>
+<p>${new Date(issue.createdAt).toLocaleDateString()}</p>
 
 </div>
 
