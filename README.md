@@ -1,4 +1,4 @@
-Live Link: https://eshtiak23.github.io/Assinment-5-Github-Issue-Tracker/dashboard.html
+Live Link: https://eshtiak23.github.io/Assinment-5-Github-Issue-Tracker/
 
 
                    <!-- Question & Answer -->

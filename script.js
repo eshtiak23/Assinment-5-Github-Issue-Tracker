@@ -8,6 +8,7 @@ showLoading(true);
 const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`);
 
 const data = await res.json();
+
 displayIssues(data.data);
 
 showLoading(false);
@@ -19,7 +20,8 @@ const api = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
 
 let allIssues = [];
 
-window.onload = loadIssues;
+window.onload = fetchIssues;
+
 
 
 // change tab color
@@ -28,14 +30,17 @@ function changeTab(btn){
 let tabs = document.getElementsByClassName("tabBtn");
 
 for(let i = 0; i < tabs.length; i++){
+
 tabs[i].classList.remove("bg-pink-600");
 tabs[i].classList.add("bg-gray-700");
+
 }
 
 btn.classList.remove("bg-gray-700");
 btn.classList.add("bg-pink-600");
 
 }
+
 
 
 // All Issues
@@ -50,8 +55,8 @@ displayIssues(allIssues);
 }
 
 
-// Open Issues Sec....
 
+// Open Issues
 function loadOpen(btn){
 
 changeTab(btn);
@@ -63,6 +68,7 @@ return issue.status === "open";
 displayIssues(filtered);
 
 }
+
 
 
 // Closed Issues
@@ -79,8 +85,9 @@ displayIssues(filtered);
 }
 
 
-// LOAD ALL ISSUES Section
-async function loadIssues(){
+
+// LOAD ALL ISSUES (API)
+async function fetchIssues(){
 
 showLoading(true);
 
@@ -97,8 +104,7 @@ showLoading(false);
 
 
 
-               // Display Issues Section
-
+// Display Issues Section
 function displayIssues(issues){
 
 const container = document.getElementById("issuesContainer");
@@ -193,8 +199,7 @@ container.appendChild(card);
 
 
 
-          // Modal Open Section
-
+// Modal Open
 function openModal(issue){
 
 document.getElementById("modal").classList.remove("hidden");
@@ -212,8 +217,7 @@ document.getElementById("modalDate").innerText = issue.createdAt;
 
 
 
-               // Close Modal Section
-
+// Close Modal
 function closeModal(){
 
 document.getElementById("modal").classList.add("hidden");
@@ -222,8 +226,7 @@ document.getElementById("modal").classList.add("hidden");
 
 
 
-           // Loading Section
-
+// Loading
 function showLoading(state){
 
 document.getElementById("loading")
