@@ -39,12 +39,17 @@ Search </button>
                 <!-- The Tab Section -->
 <div class="bg-gray-800 p-4 rounded-lg flex gap-3 mb-6">
 
-<button onclick="loadIssues()" class="tabBtn bg-pink-600 px-4 py-1 rounded"> All </button>
+<button onclick="loadIssues(this)" class="tabBtn bg-pink-600 px-4 py-1 rounded">
+All
+</button>
 
-<button onclick="loadOpen()" class="tabBtn bg-gray-700 px-4 py-1 rounded">
-Open </button>
+<button onclick="loadOpen(this)" class="tabBtn bg-gray-700 px-4 py-1 rounded">
+Open
+</button>
 
-<button onclick="loadClosed()" class="tabBtn bg-gray-700 px-4 py-1 rounded"> Closed </button>
+<button onclick="loadClosed(this)" class="tabBtn bg-gray-700 px-4 py-1 rounded">
+Closed
+</button>
 
 </div>
 
@@ -80,38 +85,62 @@ id="issuesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6
 
 </div>
 
-           <!-- Modal Section Here.. -->
+<!-- Modal Section -->
 
-<div
-id="modal"
-class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center"
->
+<div id="modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center">
 
-<div class="bg-gray-800 p-6 rounded-lg max-w-lg w-full">
+  <div class="bg-[#1f2937] text-white p-6 rounded-xl max-w-2xl w-full shadow-xl">
 
-<h2 id="modalTitle" class="text-xl font-bold mb-2"></h2>
+    <!-- Title -->
+    <h2 id="modalTitle" class="text-2xl font-semibold mb-2"></h2>
 
-<p id="modalDesc" class="text-gray-300 mb-4"></p>
+    <!-- Description -->
+    <p id="modalDesc" class="text-gray-400 mb-6"></p>
 
-<div class="text-sm space-y-1">
+    <!-- Info Grid -->
+    <div class="bg-gray-700/40 rounded-lg p-4 grid grid-cols-2 gap-4 text-sm">
 
-<p><b>Status:</b> <span id="modalStatus"></span></p>
-<p><b>Author:</b> <span id="modalAuthor"></span></p>
-<p><b>Priority:</b> <span id="modalPriority"></span></p>
-<p><b>Label:</b> <span id="modalLabel"></span></p>
-<p><b>Date:</b> <span id="modalDate"></span></p>
+      <p>
+        <span class="text-gray-400">Status:</span>
+        <span id="modalStatus" class="ml-2 font-medium"></span>
+      </p>
+
+      <p>
+        <span class="text-gray-400">Author:</span>
+        <span id="modalAuthor" class="ml-2 font-medium"></span>
+      </p>
+
+      <p>
+        <span class="text-gray-400">Priority:</span>
+        <span id="modalPriority" class="ml-2 px-3 py-1 rounded-full text-xs bg-red-500 text-white"></span>
+      </p>
+
+      <p>
+        <span class="text-gray-400">Label:</span>
+        <span id="modalLabel" class="ml-2"></span>
+      </p>
+
+      <p class="col-span-2">
+        <span class="text-gray-400">Date:</span>
+        <span id="modalDate" class="ml-2"></span>
+      </p>
+
+    </div>
+
+    <!-- Button -->
+    <div class="flex justify-end mt-6">
+      <button onclick="closeModal()" 
+      class="bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-2 rounded-lg hover:opacity-90 transition">
+        Close
+      </button>
+    </div>
+
+  </div>
 
 </div>
 
-<button onclick="closeModal()" class="mt-4 bg-Pink-600 px-4 py-2 rounded"> Close </button>
 
-</div>
-
-</div>
-
-
-<!-- JS FILE -->
 <script src="./script.js"></script>
 
 </body>
-</html>
+</html> 
