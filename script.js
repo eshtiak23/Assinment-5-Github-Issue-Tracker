@@ -43,7 +43,6 @@ displayIssues(filtered);
 }
 
 
-
 const api = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
 
 let allIssues = [];
@@ -107,8 +106,8 @@ displayIssues(filtered);
 }
 
 
+// LOAD ALL ISSUES Section
 
-// LOAD ALL ISSUES
 async function loadIssues(){
 
 showLoading(true);
@@ -126,7 +125,8 @@ showLoading(false);
 
 
 
-// DISPLAY ISSUES
+               // Dsaplay Issues Section
+
 function displayIssues(issues){
 
 const container = document.getElementById("issuesContainer");
@@ -150,6 +150,7 @@ card.className =
 card.innerHTML = `
 
         <!-- Header   -->
+
 <div class="flex justify-between items-center mb-3">
 
 <div class="flex items-center gap-2">
@@ -180,18 +181,21 @@ ${issue.priority}
 
 
 <!-- TITLE -->
+
 <h3 class="font-semibold text-sm mb-2">
 ${issue.title}
 </h3>
 
 
-<!-- DESCRIPTION -->
+<!-- Des. Sec -->
+
 <p class="text-gray-400 text-xs mb-4">
 ${issue.description.substring(0,70)}...
 </p>
 
 
-<!-- LABELS -->
+<!-- Label Section -->
+
 <div class="flex gap-2 mb-4">
 
 <span class="text-xs bg-red-500/20 text-red-400 px-2 py-1 rounded-full">
@@ -225,6 +229,7 @@ container.appendChild(card);
 }
 
           // Modal Open Section           .....
+
 function openModal(issue){
 
 document.getElementById("modal").classList.remove("hidden");
@@ -241,8 +246,8 @@ document.getElementById("modalDate").innerText = issue.createdAt;
 }
 
 
+               // Close Modal Section
 
-          // Close Modal Section
 function closeModal(){
 
 document.getElementById("modal").classList.add("hidden");
@@ -251,7 +256,8 @@ document.getElementById("modal").classList.add("hidden");
 
 
 
-// Loading Section
+           // Loading Section
+
 function showLoading(state){
 
 document.getElementById("loading")
