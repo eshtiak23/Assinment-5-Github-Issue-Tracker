@@ -16,7 +16,8 @@
 <nav class="bg-gray-800 px-6 py-4 flex justify-between items-center">
 
 <div class="flex items-center gap-2">
-<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" class="w-8">
+<img src="./Images/GitHub-Mark.png" class="w-8">
+
 <h1 class="font-semibold text-lg">GitHub Issues Tracker</h1>
 </div>
 
@@ -26,8 +27,7 @@
 class="bg-gray-700 px-3 py-2 rounded text-sm"/>
 
 <button onclick="searchIssue()"
-class="bg-purple-600 px-4 py-2 rounded text-sm">
-Search </button>
+class="bg-pink-600 px-4 py-2 rounded text-sm"> Search </button>
 
 </div>
 </nav>
@@ -37,24 +37,22 @@ Search </button>
 
 
                 <!-- The Tab Section -->
+
 <div class="bg-gray-800 p-4 rounded-lg flex gap-3 mb-6">
 
-<button onclick="loadIssues(this)" class="tabBtn bg-pink-600 px-4 py-1 rounded">
-All
+<button onclick="loadIssues(this)" class="tabBtn bg-gray-700 px-4 py-1 rounded"> All </button>
+
+<button onclick="loadOpen(this)" class="tabBtn bg-gray-700 px-4 py-1 rounded"> Open
 </button>
 
-<button onclick="loadOpen(this)" class="tabBtn bg-gray-700 px-4 py-1 rounded">
-Open
-</button>
-
-<button onclick="loadClosed(this)" class="tabBtn bg-gray-700 px-4 py-1 rounded">
-Closed
+<button onclick="loadClosed(this)" class="tabBtn bg-gray-700 px-4 py-1 rounded"> Closed
 </button>
 
 </div>
 
 
                 <!-- Issue Header  Section-->
+
 <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center mb-6">
 
 <div>
